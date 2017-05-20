@@ -1,0 +1,783 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jupyter," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="安装anacondawget下载，然后如下安装./Anaconda-latest-Linux-x86_64.sh默认安装目录为用户家目录下的anaconda2，如 /home/jude/anaconda2， 这个路径在安装时可以更改。完成后，包括 jupyter notebook 在内的一系列 Python 科学计算工具就都安装好了。 配置 Jupyter-notebook生成jupyter配置文">
+<meta name="keywords" content="jupyter">
+<meta property="og:type" content="article">
+<meta property="og:title" content="远程访问 Jupyter Notebook 配置">
+<meta property="og:url" content="http://tegabyte.com/2015/05/22/远程访问 Jupyter Notebook 配置/index.html">
+<meta property="og:site_name" content="太字节">
+<meta property="og:description" content="安装anacondawget下载，然后如下安装./Anaconda-latest-Linux-x86_64.sh默认安装目录为用户家目录下的anaconda2，如 /home/jude/anaconda2， 这个路径在安装时可以更改。完成后，包括 jupyter notebook 在内的一系列 Python 科学计算工具就都安装好了。 配置 Jupyter-notebook生成jupyter配置文">
+<meta property="og:updated_time" content="2017-05-20T13:53:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="远程访问 Jupyter Notebook 配置">
+<meta name="twitter:description" content="安装anacondawget下载，然后如下安装./Anaconda-latest-Linux-x86_64.sh默认安装目录为用户家目录下的anaconda2，如 /home/jude/anaconda2， 这个路径在安装时可以更改。完成后，包括 jupyter notebook 在内的一系列 Python 科学计算工具就都安装好了。 配置 Jupyter-notebook生成jupyter配置文">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tegabyte.com/2015/05/22/远程访问 Jupyter Notebook 配置/"/>
+
+
+
+
+
+  <title>远程访问 Jupyter Notebook 配置 | 太字节</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=62235104";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">太字节</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">恋恋不忘&nbsp;&nbsp;必有回响</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://tegabyte.com/2015/05/22/远程访问 Jupyter Notebook 配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="太字节">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">远程访问 Jupyter Notebook 配置</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-05-22T21:21:14+08:00">
+                2015-05-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="安装anaconda"><a href="#安装anaconda" class="headerlink" title="安装anaconda"></a>安装anaconda</h2><p>wget下载，然后如下安装<br><code>./Anaconda-latest-Linux-x86_64.sh</code><br>默认安装目录为用户家目录下的anaconda2，如 <code>/home/jude/anaconda2</code>， 这个路径在安装时可以更改。<br>完成后，包括 jupyter notebook 在内的一系列 Python 科学计算工具就都安装好了。</p>
+<h2 id="配置-Jupyter-notebook"><a href="#配置-Jupyter-notebook" class="headerlink" title="配置 Jupyter-notebook"></a>配置 Jupyter-notebook</h2><h3 id="生成jupyter配置文件"><a href="#生成jupyter配置文件" class="headerlink" title="生成jupyter配置文件"></a>生成jupyter配置文件</h3><p><code>jupyter notebook --generate-config</code><br>执行这个命令后，会在用户的Home目录中，生成 <code>~/.jupyter/jupyter_notebook_config.py</code> 文件。</p>
+<a id="more"></a>
+<h3 id="配置访问jupyter密码保护"><a href="#配置访问jupyter密码保护" class="headerlink" title="配置访问jupyter密码保护"></a>配置访问jupyter密码保护</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ ipython</div><div class="line">Python 2.7.13 |Anaconda 4.3.1 (64-bit)| (default, Dec 20 2016, 23:09:15) </div><div class="line">Type <span class="string">"copyright"</span>, <span class="string">"credits"</span> or <span class="string">"license"</span> <span class="keyword">for</span> more information.</div><div class="line"></div><div class="line">IPython 5.1.0 -- An enhanced Interactive Python.</div><div class="line">?         -&gt; Introduction and overview of IPython<span class="string">'s features.</span></div><div class="line">%quickref -&gt; Quick reference.</div><div class="line">help      -&gt; Python's own <span class="built_in">help</span> system.</div><div class="line">object?   -&gt; Details about <span class="string">'object'</span>, use <span class="string">'object??'</span> <span class="keyword">for</span> extra details.</div><div class="line"></div><div class="line">In [1]: from notebook.auth import passwd</div><div class="line"></div><div class="line">In [2]: passwd()</div><div class="line">Enter password:    // 输入密码</div><div class="line">Verify password:   // 再次输入密码</div><div class="line">Out[2]: <span class="string">'sha1:28ebb93ec41b:96830638e989cde7191b..................'</span></div></pre></td></tr></table></figure>
+<h3 id="修改jupyter配置文件"><a href="#修改jupyter配置文件" class="headerlink" title="修改jupyter配置文件"></a>修改jupyter配置文件</h3><p><code>vim ~/.jupyter/jupyter_notebook_config.py</code><br>主要修改如下几个参数：<br><figure class="highlight python"><table><tr><td class="code"><pre><div class="line">c.NotebookApp.base_url=<span class="string">'/jupyter/'</span></div><div class="line">c.NotebookApp.notebook_dir=<span class="string">'/data/jupyter-notebook'</span></div><div class="line">c.NotebookApp.ip=<span class="string">'*'</span></div><div class="line">c.NotebookApp.password = <span class="string">u'sha1:ce...'</span> <span class="comment">#粘贴 2.2 生成的密文'</span></div><div class="line">c.NotebookApp.open_browser = <span class="keyword">False</span></div><div class="line">c.NotebookApp.port =<span class="number">8888</span></div></pre></td></tr></table></figure></p>
+<h3 id="启动jupyter"><a href="#启动jupyter" class="headerlink" title="启动jupyter"></a>启动jupyter</h3><p><code>jupyter notebook</code></p>
+<h2 id="直接远程访问"><a href="#直接远程访问" class="headerlink" title="直接远程访问"></a>直接远程访问</h2><p>访问地址 <code>http://server-ip:8888</code>，输入2.2节配置的密码即可登录</p>
+<h2 id="通过-Nginx-远程访问"><a href="#通过-Nginx-远程访问" class="headerlink" title="通过 Nginx 远程访问"></a>通过 Nginx 远程访问</h2><p>很多服务器由于防火墙或者网络环境的原因，不能通过上述的配置过程实现远程访问 jupyter-notebook，需要我们通过安装配置 Nginx 来实现。</p>
+<h3 id="安装-Nginx"><a href="#安装-Nginx" class="headerlink" title="安装 Nginx"></a>安装 Nginx</h3><p><code>yum install nginx_x86.64</code></p>
+<h3 id="配置-Nginx"><a href="#配置-Nginx" class="headerlink" title="配置 Nginx"></a>配置 Nginx</h3><p>在 <code>/etc/nginx/conf.d/</code> 目录下新建文件 <code>jupyter.conf</code><br>文件内容：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">upstream jupyter &#123;</div><div class="line">    server localhost:8888;    #8888 对应 2.3 中 jupyter 配置的监听端口号</div><div class="line">&#125;</div><div class="line">server&#123;</div><div class="line">    listen 80;</div><div class="line">    server_name jupyter.ied.com;   #server_name 根据需要修改</div><div class="line">    location / &#123;</div><div class="line">            proxy_pass            http://jupyter;</div><div class="line">            proxy_set_header      Host $host;</div><div class="line">            # websocket support</div><div class="line">            proxy_http_version    1.1;</div><div class="line">            proxy_set_header      Upgrade &quot;websocket&quot;;</div><div class="line">            proxy_set_header      Connection &quot;Upgrade&quot;;</div><div class="line">            proxy_read_timeout    86400;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    location ~ /api/kernels/ &#123;</div><div class="line">            proxy_pass            http://jupyter;</div><div class="line">            proxy_set_header      Host $host;</div><div class="line">            # websocket support</div><div class="line">            proxy_http_version    1.1;</div><div class="line">            proxy_set_header      Upgrade &quot;websocket&quot;;</div><div class="line">            proxy_set_header      Connection &quot;Upgrade&quot;;</div><div class="line">            proxy_read_timeout    86400;</div><div class="line">        &#125;</div><div class="line">    location ~ /terminals/ &#123;</div><div class="line">            proxy_pass            http://jupyter;</div><div class="line">            proxy_set_header      Host $host;</div><div class="line">            # websocket support</div><div class="line">            proxy_http_version    1.1;</div><div class="line">            proxy_set_header      Upgrade &quot;websocket&quot;;</div><div class="line">            proxy_set_header      Connection &quot;Upgrade&quot;;</div><div class="line">            proxy_read_timeout    86400;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="远程访问"><a href="#远程访问" class="headerlink" title="远程访问"></a>远程访问</h3><p>访问地址 <code>http://jupyter.ied.com/jupyter/</code>，输入2.2节配置的密码即可登录</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jupyter/" rel="tag"># jupyter</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/05/20/Hexo Introduction/" rel="next" title="Hexo Introduction">
+                <i class="fa fa-chevron-left"></i> Hexo Introduction
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/05/25/VIM配置 - 使用Vundle和GitHub/" rel="prev" title="VIM配置 - 使用Vundle和GitHub">
+                VIM配置 - 使用Vundle和GitHub <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/logo.jpg"
+               alt="" />
+          <p class="site-author-name" itemprop="name"></p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="//github.com/TegaByte" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="//weibo.com" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="//www.zhihu.com/people/tegabyte/" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-spinner"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="//mp.weixin.qq.com/" target="_blank" title="微信">
+                  
+                    <i class="fa fa-fw fa-weixin"></i>
+                  
+                  微信
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装anaconda"><span class="nav-number">1.</span> <span class="nav-text">安装anaconda</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-Jupyter-notebook"><span class="nav-number">2.</span> <span class="nav-text">配置 Jupyter-notebook</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成jupyter配置文件"><span class="nav-number">2.1.</span> <span class="nav-text">生成jupyter配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置访问jupyter密码保护"><span class="nav-number">2.2.</span> <span class="nav-text">配置访问jupyter密码保护</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改jupyter配置文件"><span class="nav-number">2.3.</span> <span class="nav-text">修改jupyter配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动jupyter"><span class="nav-number">2.4.</span> <span class="nav-text">启动jupyter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接远程访问"><span class="nav-number">3.</span> <span class="nav-text">直接远程访问</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过-Nginx-远程访问"><span class="nav-number">4.</span> <span class="nav-text">通过 Nginx 远程访问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Nginx"><span class="nav-number">4.1.</span> <span class="nav-text">安装 Nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-Nginx"><span class="nav-number">4.2.</span> <span class="nav-text">配置 Nginx</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#远程访问"><span class="nav-number">4.3.</span> <span class="nav-text">远程访问</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-university"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+</div>
+
+
+<div class="powered-by">
+  Powered By <a class="theme-link" href="https://hexo.io">Hexo</a> 
+</div>
+
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+
+  
+
+  
+
+</body>
+</html>
