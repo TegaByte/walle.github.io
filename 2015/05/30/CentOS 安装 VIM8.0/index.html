@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="安装终端字符处理库nucrsesyum install ncurses-devel -y 编译安装cd /usr/local/src/wget ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2tar -jzxf vim-8.0.tar.bz2cd vim80/./configure --prefix=/usr/local/vim8 --enable-mu">
+<meta name="description" content="安装终端字符处理库nucrsesyum install ncurses-devel -y 编译安装cd /usr/local/src/wget ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2tar -jzxf vim-8.0.tar.bz2cd vim80/./configure --prefix=/usr/local/vim8 --enable-m">
 <meta name="keywords" content="vim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS 安装 VIM8.0">
 <meta property="og:url" content="http://tegabyte.com/2015/05/30/CentOS 安装 VIM8.0/index.html">
 <meta property="og:site_name" content="太字节">
-<meta property="og:description" content="安装终端字符处理库nucrsesyum install ncurses-devel -y 编译安装cd /usr/local/src/wget ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2tar -jzxf vim-8.0.tar.bz2cd vim80/./configure --prefix=/usr/local/vim8 --enable-mu">
-<meta property="og:updated_time" content="2017-05-20T13:47:33.000Z">
+<meta property="og:description" content="安装终端字符处理库nucrsesyum install ncurses-devel -y 编译安装cd /usr/local/src/wget ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2tar -jzxf vim-8.0.tar.bz2cd vim80/./configure --prefix=/usr/local/vim8 --enable-m">
+<meta property="og:updated_time" content="2017-05-27T00:41:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CentOS 安装 VIM8.0">
-<meta name="twitter:description" content="安装终端字符处理库nucrsesyum install ncurses-devel -y 编译安装cd /usr/local/src/wget ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2tar -jzxf vim-8.0.tar.bz2cd vim80/./configure --prefix=/usr/local/vim8 --enable-mu">
+<meta name="twitter:description" content="安装终端字符处理库nucrsesyum install ncurses-devel -y 编译安装cd /usr/local/src/wget ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2tar -jzxf vim-8.0.tar.bz2cd vim80/./configure --prefix=/usr/local/vim8 --enable-m">
 
 
 
@@ -357,7 +357,8 @@
       
 
       
-        <h2 id="安装终端字符处理库nucrses"><a href="#安装终端字符处理库nucrses" class="headerlink" title="安装终端字符处理库nucrses"></a>安装终端字符处理库nucrses</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">yum install ncurses-devel -y</div></pre></td></tr></table></figure>
+        <hr>
+<h2 id="安装终端字符处理库nucrses"><a href="#安装终端字符处理库nucrses" class="headerlink" title="安装终端字符处理库nucrses"></a>安装终端字符处理库nucrses</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">yum install ncurses-devel -y</div></pre></td></tr></table></figure>
 <h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/src/</div><div class="line">wget ftp://ftp.vim.org/pub/vim/unix/vim-8.0.tar.bz2</div><div class="line">tar -jzxf vim-8.0.tar.bz2</div><div class="line"><span class="built_in">cd</span> vim80/</div><div class="line">./configure --prefix=/usr/<span class="built_in">local</span>/vim8 --enable-multibyte --enable-pythoninterp=yes --with-python-config-dir=/usr/lib/python2.6/config</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
 <h2 id="添加符号链接"><a href="#添加符号链接" class="headerlink" title="添加符号链接"></a>添加符号链接</h2><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line"><span class="built_in">cd</span> /usr/bin</div><div class="line">ln <span class="_">-s</span> /usr/<span class="built_in">local</span>/vim8/bin/vim ./vim8</div></pre></td></tr></table></figure>
 <a id="more"></a>

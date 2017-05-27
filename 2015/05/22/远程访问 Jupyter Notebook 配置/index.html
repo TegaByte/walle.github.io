@@ -88,17 +88,17 @@
 
 
 
-<meta name="description" content="安装anacondawget下载，然后如下安装./Anaconda-latest-Linux-x86_64.sh默认安装目录为用户家目录下的anaconda2，如 /home/jude/anaconda2， 这个路径在安装时可以更改。完成后，包括 jupyter notebook 在内的一系列 Python 科学计算工具就都安装好了。 配置 Jupyter-notebook生成jupyter配置文">
+<meta name="description" content="安装anacondawget下载，然后如下安装./Anaconda-latest-Linux-x86_64.sh默认安装目录为用户家目录下的anaconda2，如 /home/jude/anaconda2， 这个路径在安装时可以更改。完成后，包括 jupyter notebook 在内的一系列 Python 科学计算工具就都安装好了。 配置 Jupyter-notebook生成jupyter配置">
 <meta name="keywords" content="jupyter">
 <meta property="og:type" content="article">
 <meta property="og:title" content="远程访问 Jupyter Notebook 配置">
 <meta property="og:url" content="http://tegabyte.com/2015/05/22/远程访问 Jupyter Notebook 配置/index.html">
 <meta property="og:site_name" content="太字节">
-<meta property="og:description" content="安装anacondawget下载，然后如下安装./Anaconda-latest-Linux-x86_64.sh默认安装目录为用户家目录下的anaconda2，如 /home/jude/anaconda2， 这个路径在安装时可以更改。完成后，包括 jupyter notebook 在内的一系列 Python 科学计算工具就都安装好了。 配置 Jupyter-notebook生成jupyter配置文">
-<meta property="og:updated_time" content="2017-05-20T13:53:46.000Z">
+<meta property="og:description" content="安装anacondawget下载，然后如下安装./Anaconda-latest-Linux-x86_64.sh默认安装目录为用户家目录下的anaconda2，如 /home/jude/anaconda2， 这个路径在安装时可以更改。完成后，包括 jupyter notebook 在内的一系列 Python 科学计算工具就都安装好了。 配置 Jupyter-notebook生成jupyter配置">
+<meta property="og:updated_time" content="2017-05-27T00:33:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="远程访问 Jupyter Notebook 配置">
-<meta name="twitter:description" content="安装anacondawget下载，然后如下安装./Anaconda-latest-Linux-x86_64.sh默认安装目录为用户家目录下的anaconda2，如 /home/jude/anaconda2， 这个路径在安装时可以更改。完成后，包括 jupyter notebook 在内的一系列 Python 科学计算工具就都安装好了。 配置 Jupyter-notebook生成jupyter配置文">
+<meta name="twitter:description" content="安装anacondawget下载，然后如下安装./Anaconda-latest-Linux-x86_64.sh默认安装目录为用户家目录下的anaconda2，如 /home/jude/anaconda2， 这个路径在安装时可以更改。完成后，包括 jupyter notebook 在内的一系列 Python 科学计算工具就都安装好了。 配置 Jupyter-notebook生成jupyter配置">
 
 
 
@@ -357,7 +357,8 @@
       
 
       
-        <h2 id="安装anaconda"><a href="#安装anaconda" class="headerlink" title="安装anaconda"></a>安装anaconda</h2><p>wget下载，然后如下安装<br><code>./Anaconda-latest-Linux-x86_64.sh</code><br>默认安装目录为用户家目录下的anaconda2，如 <code>/home/jude/anaconda2</code>， 这个路径在安装时可以更改。<br>完成后，包括 jupyter notebook 在内的一系列 Python 科学计算工具就都安装好了。</p>
+        <hr>
+<h2 id="安装anaconda"><a href="#安装anaconda" class="headerlink" title="安装anaconda"></a>安装anaconda</h2><p>wget下载，然后如下安装<br><code>./Anaconda-latest-Linux-x86_64.sh</code><br>默认安装目录为用户家目录下的anaconda2，如 <code>/home/jude/anaconda2</code>， 这个路径在安装时可以更改。<br>完成后，包括 jupyter notebook 在内的一系列 Python 科学计算工具就都安装好了。</p>
 <h2 id="配置-Jupyter-notebook"><a href="#配置-Jupyter-notebook" class="headerlink" title="配置 Jupyter-notebook"></a>配置 Jupyter-notebook</h2><h3 id="生成jupyter配置文件"><a href="#生成jupyter配置文件" class="headerlink" title="生成jupyter配置文件"></a>生成jupyter配置文件</h3><p><code>jupyter notebook --generate-config</code><br>执行这个命令后，会在用户的Home目录中，生成 <code>~/.jupyter/jupyter_notebook_config.py</code> 文件。</p>
 <a id="more"></a>
 <h3 id="配置访问jupyter密码保护"><a href="#配置访问jupyter密码保护" class="headerlink" title="配置访问jupyter密码保护"></a>配置访问jupyter密码保护</h3><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">$ ipython</div><div class="line">Python 2.7.13 |Anaconda 4.3.1 (64-bit)| (default, Dec 20 2016, 23:09:15) </div><div class="line">Type <span class="string">"copyright"</span>, <span class="string">"credits"</span> or <span class="string">"license"</span> <span class="keyword">for</span> more information.</div><div class="line"></div><div class="line">IPython 5.1.0 -- An enhanced Interactive Python.</div><div class="line">?         -&gt; Introduction and overview of IPython<span class="string">'s features.</span></div><div class="line">%quickref -&gt; Quick reference.</div><div class="line">help      -&gt; Python's own <span class="built_in">help</span> system.</div><div class="line">object?   -&gt; Details about <span class="string">'object'</span>, use <span class="string">'object??'</span> <span class="keyword">for</span> extra details.</div><div class="line"></div><div class="line">In [1]: from notebook.auth import passwd</div><div class="line"></div><div class="line">In [2]: passwd()</div><div class="line">Enter password:    // 输入密码</div><div class="line">Verify password:   // 再次输入密码</div><div class="line">Out[2]: <span class="string">'sha1:28ebb93ec41b:96830638e989cde7191b..................'</span></div></pre></td></tr></table></figure>
