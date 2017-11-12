@@ -72,7 +72,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Programmer, Data Analysis, Machine Learning, Distributed System" />
+  <meta name="keywords" content="xml," />
 
 
 
@@ -88,15 +88,19 @@
 
 
 
-<meta name="description" content="编程,programming,数据分析,data analysis,机器学习,machine learning,ml,ai">
-<meta property="og:type" content="website">
-<meta property="og:title" content="太字节">
-<meta property="og:url" content="http://wallez.cn/categories/hexo/index.html">
+<meta name="description" content="最近项目中需要一个XML操作库，考察了目前的一些开源实现，本来想写篇文章比较下，但发现stackoverfloww上有个非常不错的总结。下面转载过来分享下：What XML parser should I use in C++?">
+<meta name="keywords" content="xml">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XML 库选型指南">
+<meta property="og:url" content="http://wallez.cn/2017/11/12/XML库选型指南/index.html">
 <meta property="og:site_name" content="太字节">
-<meta property="og:description" content="编程,programming,数据分析,data analysis,机器学习,machine learning,ml,ai">
+<meta property="og:description" content="最近项目中需要一个XML操作库，考察了目前的一些开源实现，本来想写篇文章比较下，但发现stackoverfloww上有个非常不错的总结。下面转载过来分享下：What XML parser should I use in C++?">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1flfcno0e5qj30vn0xcgny.jpg">
+<meta property="og:updated_time" content="2017-11-12T08:00:37.902Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="太字节">
-<meta name="twitter:description" content="编程,programming,数据分析,data analysis,机器学习,machine learning,ml,ai">
+<meta name="twitter:title" content="XML 库选型指南">
+<meta name="twitter:description" content="最近项目中需要一个XML操作库，考察了目前的一些开源实现，本来想写篇文章比较下，但发现stackoverfloww上有个非常不错的总结。下面转载过来分享下：What XML parser should I use in C++?">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1flfcno0e5qj30vn0xcgny.jpg">
 
 
 
@@ -124,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://wallez.cn/categories/hexo/"/>
+  <link rel="canonical" href="http://wallez.cn/2017/11/12/XML库选型指南/"/>
 
 
 
 
 
-  <title>分类: hexo | 太字节</title>
+  <title>XML 库选型指南 | 太字节</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -165,7 +169,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,45 +273,170 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2>hexo<small>分类</small>
-      </h2>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2015/05/20/Hexo Introduction/" itemprop="url">
-              
-                <span itemprop="name">Hexo Introduction</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-05-20T11:57:15+08:00"
-              content="2015-05-20" >
-          05-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://wallez.cn/2017/11/12/XML库选型指南/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="太字节">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">XML 库选型指南</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-12T15:39:44+08:00">
+                2017-11-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C++</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近项目中需要一个XML操作库，考察了目前的一些开源实现，本来想写篇文章比较下，但发现stackoverfloww上有个非常不错的总结。下面转载过来分享下：<br><a href="https://stackoverflow.com/questions/9387610/what-xml-parser-should-i-use-in-c/9387612#9387612" target="_blank" rel="external"><strong>What XML parser should I use in C++?</strong></a><br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1flfcno0e5qj30vn0xcgny.jpg" alt=""></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/xml/" rel="tag"># xml</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/22/微服务 - 服务发现/" rel="next" title="微服务 - 服务发现">
+                <i class="fa fa-chevron-left"></i> 微服务 - 服务发现
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -315,6 +444,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -556,6 +689,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
@@ -623,26 +760,6 @@
 
 
   
-  
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-    </script>
-
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
 
