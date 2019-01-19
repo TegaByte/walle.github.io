@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="什么是服务发现服务发现 指一个服务通过某种方式查找其他服务网络位置（如IP，端口号）等信息的过程。 为什么需要服务发现当一个服务与其他服务进行通信时，我们需要知道其他服务的网络位置(IP，端口号)信息。在传统的单体服务中，各个服务实例的网络位置是相对静态的，这样我们可以从偶尔更新的配置文件中读取各个服务的网络位置。但在微服务架构中，由于扩缩容、故障、升级等原因，服务实例的网络位置是动态分配和动态">
+    <meta name="description" content="1. 什么是服务发现服务发现 指一个服务通过某种方式查找其他服务网络位置（如IP，端口号）等信息的过程。 2. 为什么需要服务发现当一个服务与其他服务进行通信时，我们需要知道其他服务的网络位置(IP，端口号)信息。在传统的单体服务中，各个服务实例的网络位置是相对静态的，这样我们可以从偶尔更新的配置文件中读取各个服务的网络位置。但在微服务架构中，由于扩缩容、故障、升级等原因，服务实例的网络位置是动态">
 <meta name="keywords" content="微服务,服务发现">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微服务 - 服务发现">
 <meta property="og:url" content="http://wallezen.com/2017/10/22/微服务 - 服务发现/index.html">
 <meta property="og:site_name" content="ZEN">
-<meta property="og:description" content="什么是服务发现服务发现 指一个服务通过某种方式查找其他服务网络位置（如IP，端口号）等信息的过程。 为什么需要服务发现当一个服务与其他服务进行通信时，我们需要知道其他服务的网络位置(IP，端口号)信息。在传统的单体服务中，各个服务实例的网络位置是相对静态的，这样我们可以从偶尔更新的配置文件中读取各个服务的网络位置。但在微服务架构中，由于扩缩容、故障、升级等原因，服务实例的网络位置是动态分配和动态">
+<meta property="og:description" content="1. 什么是服务发现服务发现 指一个服务通过某种方式查找其他服务网络位置（如IP，端口号）等信息的过程。 2. 为什么需要服务发现当一个服务与其他服务进行通信时，我们需要知道其他服务的网络位置(IP，端口号)信息。在传统的单体服务中，各个服务实例的网络位置是相对静态的，这样我们可以从偶尔更新的配置文件中读取各个服务的网络位置。但在微服务架构中，由于扩缩容、故障、升级等原因，服务实例的网络位置是动态">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fkqu7hte0kj30sg0t0q5m.jpg">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fkqu8bn9elj30sg0qvq5q.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fkqu8paaekj30sg0hjjt5.jpg">
@@ -20,10 +20,10 @@
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fkqu9mhvbwj30sg0gh0tl.jpg">
 <meta property="og:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fkquc1s69oj30p00a174r.jpg">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/006tKfTcgy1fkquci2r47j30p00a1jrr.jpg">
-<meta property="og:updated_time" content="2019-01-19T04:31:32.957Z">
+<meta property="og:updated_time" content="2019-01-19T10:48:17.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="微服务 - 服务发现">
-<meta name="twitter:description" content="什么是服务发现服务发现 指一个服务通过某种方式查找其他服务网络位置（如IP，端口号）等信息的过程。 为什么需要服务发现当一个服务与其他服务进行通信时，我们需要知道其他服务的网络位置(IP，端口号)信息。在传统的单体服务中，各个服务实例的网络位置是相对静态的，这样我们可以从偶尔更新的配置文件中读取各个服务的网络位置。但在微服务架构中，由于扩缩容、故障、升级等原因，服务实例的网络位置是动态分配和动态">
+<meta name="twitter:description" content="1. 什么是服务发现服务发现 指一个服务通过某种方式查找其他服务网络位置（如IP，端口号）等信息的过程。 2. 为什么需要服务发现当一个服务与其他服务进行通信时，我们需要知道其他服务的网络位置(IP，端口号)信息。在传统的单体服务中，各个服务实例的网络位置是相对静态的，这样我们可以从偶尔更新的配置文件中读取各个服务的网络位置。但在微服务架构中，由于扩缩容、故障、升级等原因，服务实例的网络位置是动态">
 <meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tKfTcgy1fkqu7hte0kj30sg0t0q5m.jpg">
     
     
@@ -108,14 +108,13 @@
   <li><a class="icon" href="http://reddit.com/submit?url=http://wallezen.com/2017/10/22/微服务 - 服务发现/&title=微服务 - 服务发现"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://wallezen.com/2017/10/22/微服务 - 服务发现/&title=微服务 - 服务发现"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=http://wallezen.com/2017/10/22/微服务 - 服务发现/&title=微服务 - 服务发现"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://wallezen.com/2017/10/22/微服务 - 服务发现/&name=微服务 - 服务发现&description=&lt;hr&gt;
-&lt;h4 id=&quot;什么是服务发现&quot;&gt;&lt;a href=&quot;#什么是服务发现&quot; class=&quot;headerlink&quot; title=&quot;什么是服务发现&quot;&gt;&lt;/a&gt;什么是服务发现&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;服务发现&lt;/strong&gt; 指一个服务通过某种方式查找其他服务网络位置（如IP，端口号）等信息的过程。&lt;/p&gt;
-&lt;h4 id=&quot;为什么需要服务发现&quot;&gt;&lt;a href=&quot;#为什么需要服务发现&quot; class=&quot;headerlink&quot; title=&quot;为什么需要服务发现&quot;&gt;&lt;/a&gt;为什么需要服务发现&lt;/h4&gt;&lt;p&gt;当一个服务与其他服务进行通信时，我们需要知道其他服务的网络位置(IP，端口号)信息。在传统的单体服务中，各个服务实例的网络位置是相对静态的，这样我们可以从偶尔更新的配置文件中读取各个服务的网络位置。&lt;br&gt;但在微服务架构中，由于扩缩容、故障、升级等原因，服务实例的网络位置是动态分配和动态变化的，使得通过更新配置文件的方式更新其他服务的网络位置信息不再适用。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://wallezen.com/2017/10/22/微服务 - 服务发现/&name=微服务 - 服务发现&description=&lt;h2 id=&quot;1-什么是服务发现&quot;&gt;&lt;a href=&quot;#1-什么是服务发现&quot; class=&quot;headerlink&quot; title=&quot;1. 什么是服务发现&quot;&gt;&lt;/a&gt;1. 什么是服务发现&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;服务发现&lt;/strong&gt; 指一个服务通过某种方式查找其他服务网络位置（如IP，端口号）等信息的过程。&lt;/p&gt;
+&lt;h2 id=&quot;2-为什么需要服务发现&quot;&gt;&lt;a href=&quot;#2-为什么需要服务发现&quot; class=&quot;headerlink&quot; title=&quot;2. 为什么需要服务发现&quot;&gt;&lt;/a&gt;2. 为什么需要服务发现&lt;/h2&gt;&lt;p&gt;当一个服务与其他服务进行通信时，我们需要知道其他服务的网络位置(IP，端口号)信息。在传统的单体服务中，各个服务实例的网络位置是相对静态的，这样我们可以从偶尔更新的配置文件中读取各个服务的网络位置。&lt;br&gt;但在微服务架构中，由于扩缩容、故障、升级等原因，服务实例的网络位置是动态分配和动态变化的，使得通过更新配置文件的方式更新其他服务的网络位置信息不再适用。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是服务发现"><span class="toc-number">1.</span> <span class="toc-text">什么是服务发现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么需要服务发现"><span class="toc-number">2.</span> <span class="toc-text">为什么需要服务发现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务发现如何实现"><span class="toc-number">3.</span> <span class="toc-text">服务发现如何实现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#客户端发现"><span class="toc-number">3.1.</span> <span class="toc-text">客户端发现</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#服务端发现"><span class="toc-number">3.2.</span> <span class="toc-text">服务端发现</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#服务注册"><span class="toc-number">3.3.</span> <span class="toc-text">服务注册</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#自注册"><span class="toc-number">3.3.1.</span> <span class="toc-text">自注册</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#第三方注册"><span class="toc-number">3.3.2.</span> <span class="toc-text">第三方注册</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#K8S-Kubernetes-服务发现实现方式"><span class="toc-number">4.</span> <span class="toc-text">K8S(Kubernetes)服务发现实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#kube2sky"><span class="toc-number">4.1.</span> <span class="toc-text">kube2sky</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#kubeDNS"><span class="toc-number">4.2.</span> <span class="toc-text">kubeDNS</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他服务发现实现方式"><span class="toc-number">5.</span> <span class="toc-text">其他服务发现实现方式</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-什么是服务发现"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是服务发现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-为什么需要服务发现"><span class="toc-number">2.</span> <span class="toc-text">2. 为什么需要服务发现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-服务发现如何实现"><span class="toc-number">3.</span> <span class="toc-text">3. 服务发现如何实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-客户端发现"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 客户端发现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-服务端发现"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 服务端发现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-服务注册"><span class="toc-number">4.</span> <span class="toc-text">4. 服务注册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-自注册"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 自注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-第三方注册"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 第三方注册</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-K8S-Kubernetes-服务发现实现方式"><span class="toc-number">5.</span> <span class="toc-text">5. K8S(Kubernetes)服务发现实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-kube2sky"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 kube2sky</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-kubeDNS"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 kubeDNS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-其他服务发现实现方式"><span class="toc-number">6.</span> <span class="toc-text">6. 其他服务发现实现方式</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -161,12 +160,11 @@
   
 
   <div class="content" itemprop="articleBody">
-    <hr>
-<h4 id="什么是服务发现"><a href="#什么是服务发现" class="headerlink" title="什么是服务发现"></a>什么是服务发现</h4><p><strong>服务发现</strong> 指一个服务通过某种方式查找其他服务网络位置（如IP，端口号）等信息的过程。</p>
-<h4 id="为什么需要服务发现"><a href="#为什么需要服务发现" class="headerlink" title="为什么需要服务发现"></a>为什么需要服务发现</h4><p>当一个服务与其他服务进行通信时，我们需要知道其他服务的网络位置(IP，端口号)信息。在传统的单体服务中，各个服务实例的网络位置是相对静态的，这样我们可以从偶尔更新的配置文件中读取各个服务的网络位置。<br>但在微服务架构中，由于扩缩容、故障、升级等原因，服务实例的网络位置是动态分配和动态变化的，使得通过更新配置文件的方式更新其他服务的网络位置信息不再适用。</p>
+    <h2 id="1-什么是服务发现"><a href="#1-什么是服务发现" class="headerlink" title="1. 什么是服务发现"></a>1. 什么是服务发现</h2><p><strong>服务发现</strong> 指一个服务通过某种方式查找其他服务网络位置（如IP，端口号）等信息的过程。</p>
+<h2 id="2-为什么需要服务发现"><a href="#2-为什么需要服务发现" class="headerlink" title="2. 为什么需要服务发现"></a>2. 为什么需要服务发现</h2><p>当一个服务与其他服务进行通信时，我们需要知道其他服务的网络位置(IP，端口号)信息。在传统的单体服务中，各个服务实例的网络位置是相对静态的，这样我们可以从偶尔更新的配置文件中读取各个服务的网络位置。<br>但在微服务架构中，由于扩缩容、故障、升级等原因，服务实例的网络位置是动态分配和动态变化的，使得通过更新配置文件的方式更新其他服务的网络位置信息不再适用。</p>
 <a id="more"></a>
-<h4 id="服务发现如何实现"><a href="#服务发现如何实现" class="headerlink" title="服务发现如何实现"></a>服务发现如何实现</h4><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fkqu7hte0kj30sg0t0q5m.jpg" alt=""><br>服务发现主要有两种实现方式：<code>客户端发现</code> 和 <code>服务端发现</code></p>
-<h5 id="客户端发现"><a href="#客户端发现" class="headerlink" title="客户端发现"></a>客户端发现</h5><p>当使用客户端发现方式时，客户端需要负责确定服务实例的网络位置，并在同个服务的多个实例间进行负载均衡。<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fkqu8bn9elj30sg0qvq5q.jpg" alt=""></p>
+<h2 id="3-服务发现如何实现"><a href="#3-服务发现如何实现" class="headerlink" title="3. 服务发现如何实现"></a>3. 服务发现如何实现</h2><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fkqu7hte0kj30sg0t0q5m.jpg" alt=""><br>服务发现主要有两种实现方式：<code>客户端发现</code> 和 <code>服务端发现</code></p>
+<h3 id="3-1-客户端发现"><a href="#3-1-客户端发现" class="headerlink" title="3.1 客户端发现"></a>3.1 客户端发现</h3><p>当使用客户端发现方式时，客户端需要负责确定服务实例的网络位置，并在同个服务的多个实例间进行负载均衡。<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fkqu8bn9elj30sg0qvq5q.jpg" alt=""></p>
 <ul>
 <li>优点：</li>
 </ul>
@@ -180,7 +178,7 @@
 <ol>
 <li>客户端与服务注册中心耦合，须为客户端使用的每种编程语言和框架实现客户端服务发现逻辑。</li>
 </ol>
-<h5 id="服务端发现"><a href="#服务端发现" class="headerlink" title="服务端发现"></a>服务端发现</h5><p>当使用服务端发现方式时，客户端把请求发往负载均衡器，然后由负载均衡器去确定服务实例的网络位置，并透明地将转发请求。<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fkqu8paaekj30sg0hjjt5.jpg" alt=""></p>
+<h3 id="3-2-服务端发现"><a href="#3-2-服务端发现" class="headerlink" title="3.2 服务端发现"></a>3.2 服务端发现</h3><p>当使用服务端发现方式时，客户端把请求发往负载均衡器，然后由负载均衡器去确定服务实例的网络位置，并透明地将转发请求。<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fkqu8paaekj30sg0hjjt5.jpg" alt=""></p>
 <ul>
 <li>优点：</li>
 </ul>
@@ -193,26 +191,26 @@
 <ol>
 <li>引入负载均衡组件，必须对它进行维护管理，保证其高可用。</li>
 </ol>
-<h5 id="服务注册"><a href="#服务注册" class="headerlink" title="服务注册"></a>服务注册</h5><p>在上述的架构图中，都存在 <code>Service Registry</code> 模块，这就是<strong>服务注册中心</strong>。</p>
+<h2 id="4-服务注册"><a href="#4-服务注册" class="headerlink" title="4. 服务注册"></a>4. 服务注册</h2><p>在上述的架构图中，都存在 <code>Service Registry</code> 模块，这就是<strong>服务注册中心</strong>。</p>
 <blockquote>
 <p><strong>服务注册中心</strong> 是服务发现中的核心部分。可以简单理解为一个包含了各个服务实例的网络位置等信息的数据库。各个服务将服务实例的网络位置等信息存入服务注册中心的过程就是 <strong>服务注册</strong>。服务注册中必须是<strong>高可用</strong>的，要满足分布式系统CAP中的AP。</p>
 </blockquote>
 <p>服务发现也可以简单点说就是通过查询服务注册中心获得相应服务实例的网络位置。<br>服务注册主要也有两种实现方式：<code>自注册</code> 和 <code>第三方注册</code></p>
-<h6 id="自注册"><a href="#自注册" class="headerlink" title="自注册"></a>自注册</h6><p>当使用自注册方式时，服务实例负责在服务注册中心注册和注销自己。此外，如果有必要，服务实例将通过发送心跳请求来防止其注册信息过期。<br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fkqu96y2o3j30sg0otgmq.jpg" alt=""></p>
-<h6 id="第三方注册"><a href="#第三方注册" class="headerlink" title="第三方注册"></a>第三方注册</h6><p>当使用第三方注册模式时，服务实例不再负责向服务注册中心注册自己，而是由被称为服务注册器（service registrar）的系统组件负责。服务注册器通过轮询部署环境或订阅事件来跟踪运行实例集的变更情况。当它检测到新的可用服务实例时，它会将该实例注册到服务注册中心；当检测到服务实例故障或终止时，它会注销服务实例。<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fkqu9mhvbwj30sg0gh0tl.jpg" alt=""></p>
-<h4 id="K8S-Kubernetes-服务发现实现方式"><a href="#K8S-Kubernetes-服务发现实现方式" class="headerlink" title="K8S(Kubernetes)服务发现实现方式"></a>K8S(Kubernetes)服务发现实现方式</h4><p>K8S 使用DNS方式来实现服务发现。主要有两种部署模式：<code>kube2sky</code> 和 <code>kubeDNS</code>。</p>
-<h5 id="kube2sky"><a href="#kube2sky" class="headerlink" title="kube2sky"></a>kube2sky</h5><p>k8s 1.3 前使用这种模式。该模式包括了三个组件：</p>
+<h3 id="4-1-自注册"><a href="#4-1-自注册" class="headerlink" title="4.1 自注册"></a>4.1 自注册</h3><p>当使用自注册方式时，服务实例负责在服务注册中心注册和注销自己。此外，如果有必要，服务实例将通过发送心跳请求来防止其注册信息过期。<br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fkqu96y2o3j30sg0otgmq.jpg" alt=""></p>
+<h3 id="4-2-第三方注册"><a href="#4-2-第三方注册" class="headerlink" title="4.2 第三方注册"></a>4.2 第三方注册</h3><p>当使用第三方注册模式时，服务实例不再负责向服务注册中心注册自己，而是由被称为服务注册器（service registrar）的系统组件负责。服务注册器通过轮询部署环境或订阅事件来跟踪运行实例集的变更情况。当它检测到新的可用服务实例时，它会将该实例注册到服务注册中心；当检测到服务实例故障或终止时，它会注销服务实例。<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fkqu9mhvbwj30sg0gh0tl.jpg" alt=""></p>
+<h2 id="5-K8S-Kubernetes-服务发现实现方式"><a href="#5-K8S-Kubernetes-服务发现实现方式" class="headerlink" title="5. K8S(Kubernetes)服务发现实现方式"></a>5. K8S(Kubernetes)服务发现实现方式</h2><p>K8S 使用DNS方式来实现服务发现。主要有两种部署模式：<code>kube2sky</code> 和 <code>kubeDNS</code>。</p>
+<h3 id="5-1-kube2sky"><a href="#5-1-kube2sky" class="headerlink" title="5.1 kube2sky"></a>5.1 kube2sky</h3><p>k8s 1.3 前使用这种模式。该模式包括了三个组件：</p>
 <ul>
 <li><code>etcd</code>：kv存储，保存所有的 DNS 数据；</li>
 <li><code>kube2sky</code>：通过 kubernetes API 监听 service 的变化，然后同步到 etcd；</li>
 <li><code>skydns</code>：根据 etcd 中的数据，对外提供 DNS 查询服务。<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fkquc1s69oj30p00a174r.jpg" alt=""></li>
 </ul>
-<h5 id="kubeDNS"><a href="#kubeDNS" class="headerlink" title="kubeDNS"></a>kubeDNS</h5><p>该模式在 k8s 1.3 之后使用。在该模式主要有两个组件：</p>
+<h3 id="5-2-kubeDNS"><a href="#5-2-kubeDNS" class="headerlink" title="5.2 kubeDNS"></a>5.2 kubeDNS</h3><p>该模式在 k8s 1.3 之后使用。在该模式主要有两个组件：</p>
 <ul>
 <li><code>kubeDNS</code>：替代了 kube2sky 中的 etcd+kube2sky+skydns，监听 service 变化，并把 service 相关信息保存在内存中，对外提供 DNS 查询服务；</li>
 <li><code>dnsmasq</code>：轻量级的可以提供缓存功能的 DNS 服务组件。dnsmasq  在内存中预留一块区域（默认是 1G），保存当前最常用的 DNS 查询记录。当请求 DNS 解析时，如果缓存中没有要查找的记录，它再查询 kubeDNS，并把结果缓存起来。<br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fkquci2r47j30p00a1jrr.jpg" alt=""></li>
 </ul>
-<h4 id="其他服务发现实现方式"><a href="#其他服务发现实现方式" class="headerlink" title="其他服务发现实现方式"></a>其他服务发现实现方式</h4><p>zookeeper vs consul vs Eureka</p>
+<h2 id="6-其他服务发现实现方式"><a href="#6-其他服务发现实现方式" class="headerlink" title="6. 其他服务发现实现方式"></a>6. 其他服务发现实现方式</h2><p>zookeeper vs consul vs Eureka</p>
 
   </div>
 </article>
@@ -242,7 +240,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是服务发现"><span class="toc-number">1.</span> <span class="toc-text">什么是服务发现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么需要服务发现"><span class="toc-number">2.</span> <span class="toc-text">为什么需要服务发现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#服务发现如何实现"><span class="toc-number">3.</span> <span class="toc-text">服务发现如何实现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#客户端发现"><span class="toc-number">3.1.</span> <span class="toc-text">客户端发现</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#服务端发现"><span class="toc-number">3.2.</span> <span class="toc-text">服务端发现</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#服务注册"><span class="toc-number">3.3.</span> <span class="toc-text">服务注册</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#自注册"><span class="toc-number">3.3.1.</span> <span class="toc-text">自注册</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#第三方注册"><span class="toc-number">3.3.2.</span> <span class="toc-text">第三方注册</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#K8S-Kubernetes-服务发现实现方式"><span class="toc-number">4.</span> <span class="toc-text">K8S(Kubernetes)服务发现实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#kube2sky"><span class="toc-number">4.1.</span> <span class="toc-text">kube2sky</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#kubeDNS"><span class="toc-number">4.2.</span> <span class="toc-text">kubeDNS</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#其他服务发现实现方式"><span class="toc-number">5.</span> <span class="toc-text">其他服务发现实现方式</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-什么是服务发现"><span class="toc-number">1.</span> <span class="toc-text">1. 什么是服务发现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-为什么需要服务发现"><span class="toc-number">2.</span> <span class="toc-text">2. 为什么需要服务发现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-服务发现如何实现"><span class="toc-number">3.</span> <span class="toc-text">3. 服务发现如何实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-客户端发现"><span class="toc-number">3.1.</span> <span class="toc-text">3.1 客户端发现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-服务端发现"><span class="toc-number">3.2.</span> <span class="toc-text">3.2 服务端发现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-服务注册"><span class="toc-number">4.</span> <span class="toc-text">4. 服务注册</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-自注册"><span class="toc-number">4.1.</span> <span class="toc-text">4.1 自注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-第三方注册"><span class="toc-number">4.2.</span> <span class="toc-text">4.2 第三方注册</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-K8S-Kubernetes-服务发现实现方式"><span class="toc-number">5.</span> <span class="toc-text">5. K8S(Kubernetes)服务发现实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-kube2sky"><span class="toc-number">5.1.</span> <span class="toc-text">5.1 kube2sky</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-kubeDNS"><span class="toc-number">5.2.</span> <span class="toc-text">5.2 kubeDNS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-其他服务发现实现方式"><span class="toc-number">6.</span> <span class="toc-text">6. 其他服务发现实现方式</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -256,9 +254,8 @@
   <li><a class="icon" href="http://reddit.com/submit?url=http://wallezen.com/2017/10/22/微服务 - 服务发现/&title=微服务 - 服务发现"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://wallezen.com/2017/10/22/微服务 - 服务发现/&title=微服务 - 服务发现"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" href="http://digg.com/submit?url=http://wallezen.com/2017/10/22/微服务 - 服务发现/&title=微服务 - 服务发现"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://wallezen.com/2017/10/22/微服务 - 服务发现/&name=微服务 - 服务发现&description=&lt;hr&gt;
-&lt;h4 id=&quot;什么是服务发现&quot;&gt;&lt;a href=&quot;#什么是服务发现&quot; class=&quot;headerlink&quot; title=&quot;什么是服务发现&quot;&gt;&lt;/a&gt;什么是服务发现&lt;/h4&gt;&lt;p&gt;&lt;strong&gt;服务发现&lt;/strong&gt; 指一个服务通过某种方式查找其他服务网络位置（如IP，端口号）等信息的过程。&lt;/p&gt;
-&lt;h4 id=&quot;为什么需要服务发现&quot;&gt;&lt;a href=&quot;#为什么需要服务发现&quot; class=&quot;headerlink&quot; title=&quot;为什么需要服务发现&quot;&gt;&lt;/a&gt;为什么需要服务发现&lt;/h4&gt;&lt;p&gt;当一个服务与其他服务进行通信时，我们需要知道其他服务的网络位置(IP，端口号)信息。在传统的单体服务中，各个服务实例的网络位置是相对静态的，这样我们可以从偶尔更新的配置文件中读取各个服务的网络位置。&lt;br&gt;但在微服务架构中，由于扩缩容、故障、升级等原因，服务实例的网络位置是动态分配和动态变化的，使得通过更新配置文件的方式更新其他服务的网络位置信息不再适用。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://wallezen.com/2017/10/22/微服务 - 服务发现/&name=微服务 - 服务发现&description=&lt;h2 id=&quot;1-什么是服务发现&quot;&gt;&lt;a href=&quot;#1-什么是服务发现&quot; class=&quot;headerlink&quot; title=&quot;1. 什么是服务发现&quot;&gt;&lt;/a&gt;1. 什么是服务发现&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;服务发现&lt;/strong&gt; 指一个服务通过某种方式查找其他服务网络位置（如IP，端口号）等信息的过程。&lt;/p&gt;
+&lt;h2 id=&quot;2-为什么需要服务发现&quot;&gt;&lt;a href=&quot;#2-为什么需要服务发现&quot; class=&quot;headerlink&quot; title=&quot;2. 为什么需要服务发现&quot;&gt;&lt;/a&gt;2. 为什么需要服务发现&lt;/h2&gt;&lt;p&gt;当一个服务与其他服务进行通信时，我们需要知道其他服务的网络位置(IP，端口号)信息。在传统的单体服务中，各个服务实例的网络位置是相对静态的，这样我们可以从偶尔更新的配置文件中读取各个服务的网络位置。&lt;br&gt;但在微服务架构中，由于扩缩容、故障、升级等原因，服务实例的网络位置是动态分配和动态变化的，使得通过更新配置文件的方式更新其他服务的网络位置信息不再适用。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
