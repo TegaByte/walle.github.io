@@ -470,6 +470,13 @@ body {
     width: 900px;
   }
 }
+@media (max-width: 767px) {
+  .main-inner,
+  .header-inner,
+  .footer-inner {
+    width: auto;
+  }
+}
 pre,
 .highlight {
   overflow: auto;
@@ -1700,7 +1707,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4f16aa;
+  background: #2a09ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2887,12 +2894,4 @@ body {
 }
 body {
   color: #000;
-}
-.content-wrap {
-  float: right;
-  box-sizing: border-box;
-  padding: 40px;
-  background: #fff;
-  box-shadow: initial;
-  border-radius: initial;
 }
